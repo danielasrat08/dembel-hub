@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.next/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+backups/
+*.log
+.DS_Store
+apps/api/src/db/seed/staff.private.json

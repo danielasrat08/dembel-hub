@@ -1,0 +1,354 @@
+[
+  {
+    "team": "BLY",
+    "fullName": "Supervisor BLY",
+    "role": "SS",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 01",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 02",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 03",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 04",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 05",
+    "role": "SR",
+    "status": "DEACTIVATED",
+    "joinedOn": null,
+    "deactivatedOn": "2026-08-14"
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 06",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 07",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 08",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "BLY",
+    "fullName": "Rep BLY 09",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Supervisor AFN",
+    "role": "SS",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 01",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 02",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 03",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 04",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 05",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 06",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 07",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 08",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 09",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "AFN",
+    "fullName": "Rep AFN 10",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": "2026-08-09",
+    "deactivatedOn": null
+  },
+  {
+    "team": "DHL",
+    "fullName": "Supervisor DHL",
+    "role": "SS",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "DHL",
+    "fullName": "Rep DHL 01",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "DHL",
+    "fullName": "Rep DHL 02",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "DHL",
+    "fullName": "Rep DHL 03",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "DHL",
+    "fullName": "Rep DHL 04",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Supervisor WGR",
+    "role": "SS",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Rep WGR 01",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Rep WGR 02",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Rep WGR 03",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Rep WGR 04",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Rep WGR 05",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Rep WGR 06",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Rep WGR 07",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "WGR",
+    "fullName": "Rep WGR 08",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": "2026-08-21",
+    "deactivatedOn": null
+  },
+  {
+    "team": "KFL",
+    "fullName": "Supervisor KFL",
+    "role": "SS",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "KFL",
+    "fullName": "Rep KFL 01",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "KFL",
+    "fullName": "Rep KFL 02",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "KFL",
+    "fullName": "Rep KFL 03",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "KFL",
+    "fullName": "Rep KFL 04",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "KFL",
+    "fullName": "Rep KFL 05",
+    "role": "SR",
+    "status": "DEACTIVATED",
+    "joinedOn": null,
+    "deactivatedOn": "2026-08-14"
+  },
+  {
+    "team": "KFL",
+    "fullName": "Rep KFL 06",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "KFL",
+    "fullName": "Rep KFL 07",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": null,
+    "deactivatedOn": null
+  },
+  {
+    "team": "KFL",
+    "fullName": "Rep KFL 08",
+    "role": "SR",
+    "status": "ACTIVE",
+    "joinedOn": "2026-08-29",
+    "deactivatedOn": null
+  }
+]

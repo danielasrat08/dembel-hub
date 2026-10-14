@@ -1,0 +1,34 @@
+name: CI
+on:
+  push: { branches: [main] }
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env: { POSTGRES_USER: dembel, POSTGRES_PASSWORD: ci-password-123, POSTGRES_DB: dembel_hub }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dembel" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://dembel:ci-password-123@localhost:5432/dembel_hub
+      SEED_ADMIN_PASSWORD: ci-temp-password
+      NEXT_TELEMETRY_DISABLED: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: npm run typecheck -w apps/api
+      - name: Migrations are up to date with the schema
+        run: npx drizzle-kit check && npx drizzle-kit generate --name ci-drift && git diff --exit-code -- src/db/migrations
+        working-directory: apps/api
+      - run: npm run build -w apps/api
+      - run: npm run db:migrate -w apps/api
+      - run: npm run db:seed -w apps/api
+      - name: Seed is re-runnable
+        run: npm run db:seed -w apps/api
+      - run: npm run build -w apps/web
