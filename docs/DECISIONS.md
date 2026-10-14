@@ -3,7 +3,7 @@
 | # | Date | Decision | Why |
 |---|---|---|---|
 | 1 | 13 Oct 2026 | Web app as a **PWA**, no app store | Installs from the browser, one codebase for phone and desktop. |
-| 2 | 13 Oct 2026 | **Free international VPS** for testing (Oracle Always Free, ARM) | No cost while piloting. Images are multi-arch, so production can move anywhere. |
+| 2 | 13 Oct 2026 | **Free international hosting** for testing | No cost while piloting. See #15 for the provider. |
 | 3 | 13 Oct 2026 | **Separate from ODOO** in phases 1–2 | Staff enter totals plus the few itemized records that need verification. |
 | 4 | 13 Oct 2026 | Qualified = **all four BTAP** met; Reachable and Project match optional | Branch Manager decision, 2nd review. |
 | 5 | 13 Oct 2026 | Each **visit** (office/site) and each **closed deal** verified individually; proof optional | Visits are often done with the supervisor. |
@@ -14,6 +14,7 @@
 | 10 | 13 Oct 2026 | **Branch-aware** data model | Every business table has `branch_id`. |
 | 11 | 13 Oct 2026 | **Drizzle ORM** instead of Prisma | Prisma needs native engine binaries downloaded at build time (failed in our build environment, and adds risk on ARM). Drizzle is pure TypeScript; migrations are plain SQL files in the repo. |
 | 12 | 13 Oct 2026 | Visit proof files on a **Docker volume** for the test server | Fewer moving parts. Switch to S3-compatible storage for production via env vars. |
+| 15 | 14 Oct 2026 | Test hosting moved to **Render (app) + Neon (Postgres)** | Oracle sign-up wasn't possible. Both are free without a card. Free Render services sleep after 15 min idle; acceptable for the pilot. Docker Compose setup kept for a later own server. |
 | 14 | 14 Oct 2026 | Personal data (staff names) kept out of the repository | The repository may be public; names live only on the server. |
 | 13 | 13 Oct 2026 | **NestJS 11, Next.js 16, React 19, PostgreSQL 16** | Current patched releases; `npm audit` reports 0 vulnerabilities at Phase 0. |
 

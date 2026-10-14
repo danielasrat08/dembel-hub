@@ -7,6 +7,10 @@ COPY apps/web/package.json apps/web/
 RUN npm ci -w apps/web --include-workspace-root=false
 COPY apps/web apps/web
 ENV NEXT_TELEMETRY_DISABLED=1
+# Render passes these as build args (see render.yaml)
+ARG API_HOST
+ARG API_URL
+ENV API_HOST=$API_HOST API_URL=$API_URL
 RUN npm run build -w apps/web
 
 FROM node:20-bookworm-slim

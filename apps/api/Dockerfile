@@ -21,5 +21,5 @@ RUN mkdir -p /data/files && chown node:node /data/files
 USER node
 EXPOSE 4000
 ENTRYPOINT ["/usr/bin/tini","--"]
-# Apply pending migrations, then start
-CMD ["sh","-c","node dist/db/migrate.js && node dist/main.js"]
+# Apply pending migrations, seed an empty database once, then start
+CMD ["sh","-c","node dist/db/migrate.js && node dist/db/seed-if-empty.js && node dist/main.js"]

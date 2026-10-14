@@ -1,0 +1,43 @@
+# Render Blueprint — free test hosting, no payment card needed.
+# Database: Neon free Postgres (paste its connection string as DATABASE_URL).
+# Free services sleep after 15 minutes without traffic; the first visit then takes about a minute.
+services:
+  - type: web
+    name: dembel-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./apps/api/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false            # Neon connection string (…?sslmode=require)
+      - key: SEED_ADMIN_PASSWORD
+        sync: false            # temporary Office Admin password, used once on first start
+      - key: STAFF_SEED_B64
+        sync: false            # real staff roster (base64), sent to you separately
+      - key: SEED_SALES_MANAGER_NAME
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: TZ
+        value: Africa/Addis_Ababa
+
+  - type: web
+    name: dembel-web
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./apps/web/Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    envVars:
+      - key: API_HOST
+        fromService:
+          type: web
+          name: dembel-api
+          property: host
+      - key: TZ
+        value: Africa/Addis_Ababa

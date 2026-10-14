@@ -18,8 +18,8 @@ jobs:
       SEED_ADMIN_PASSWORD: ci-temp-password
       NEXT_TELEMETRY_DISABLED: 1
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with: { node-version: 20, cache: npm }
       - run: npm ci
       - run: npm run typecheck -w apps/api

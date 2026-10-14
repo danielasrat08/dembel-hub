@@ -32,13 +32,18 @@ infra/
   Caddyfile            HTTPS + routing (/api → api, everything else → web)
   scripts/             server-bootstrap.sh, deploy.sh, backup.sh, restore.sh
 docs/
-  SERVER_SETUP.md      Oracle Cloud test server, step by step
+  HOSTING_RENDER.md    Free test hosting on Render + Neon (no card)
+  SERVER_SETUP.md      Own server / Oracle Cloud with Docker Compose
   DEVELOPMENT.md       Run it on a laptop
   DECISIONS.md         Why things are the way they are
 docker-compose.yml     Whole stack on one server
 ```
 
-## Quick start (server)
+## Free test hosting (no card)
+
+Render + Neon, set up from `render.yaml` in a few clicks: see `docs/HOSTING_RENDER.md`.
+
+## Quick start (own server)
 
 ```bash
 cp .env.example .env        # fill in passwords and APP_DOMAIN

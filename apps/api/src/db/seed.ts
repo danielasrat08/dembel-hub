@@ -91,6 +91,11 @@ type SeedStaff = { team: string; fullName: string; role: 'SS' | 'SR'; status: 'A
  * Without it, the anonymised example roster is used so development and CI still work.
  */
 function loadStaff(): SeedStaff[] {
+  // Hosted platforms without file access (e.g. Render free): roster as a base64 secret env var
+  if (process.env.STAFF_SEED_B64) {
+    console.log('Using staff roster from STAFF_SEED_B64');
+    return JSON.parse(Buffer.from(process.env.STAFF_SEED_B64, 'base64').toString('utf8')) as SeedStaff[];
+  }
   const candidates = [
     process.env.STAFF_SEED_FILE,
     path.join(__dirname, 'seed/staff.private.json'),
@@ -103,7 +108,7 @@ function loadStaff(): SeedStaff[] {
   return JSON.parse(readFileSync(file, 'utf8')) as SeedStaff[];
 }
 
-async function main() {
+export async function runSeed() {
   const tempPw = process.env.SEED_ADMIN_PASSWORD;
   if (!tempPw || tempPw.length < 10) throw new Error('Set SEED_ADMIN_PASSWORD (10+ characters) before seeding.');
 
@@ -185,4 +190,4 @@ async function main() {
   await pool.end();
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+if (require.main === module) runSeed().catch((e) => { console.error(e); process.exit(1); });
