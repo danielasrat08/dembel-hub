@@ -17,7 +17,15 @@ Design: see the approved blueprint (v0.3) and `docs/DECISIONS.md`.
 | Docker Compose stack (Postgres, Redis, API, Web, Caddy HTTPS) | Done |
 | Test-server scripts: bootstrap, deploy, backup, restore | Done |
 
-Phase 1 starts with sign-in, staff IDs and the Office Admin console.
+## Phase 1 progress
+
+| Part | State |
+|---|---|
+| Sign-in with staff ID or phone, forced password change, sign-out, 5-try lockout | Done |
+| Roles and access checks on every route; deactivation signs people out at once | Done |
+| Office Admin console: staff (add, edit, move team, reset password, deactivate), teams, sites and lists | Done |
+| Sales rep daily entry, qualified leads (BTAP), office/site visits, closed deals | Next |
+| Supervisor verification, dashboards, HQ and commission exports | Planned |
 
 ## Layout
 

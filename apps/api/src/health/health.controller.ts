@@ -1,9 +1,11 @@
 import { Controller, Get, ServiceUnavailableException } from '@nestjs/common';
 import { and, count, eq } from 'drizzle-orm';
 import { DbService } from '../db/service/db.service';
+import { Public } from '../auth/decorators';
 import { branches, metricDefs, staff, teams } from '../db/schema';
 
 /** Liveness + database check. Returns counts only, never personal data. */
+@Public()
 @Controller('health')
 export class HealthController {
   constructor(private readonly dbs: DbService) {}

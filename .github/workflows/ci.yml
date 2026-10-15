@@ -31,4 +31,7 @@ jobs:
       - run: npm run db:seed -w apps/api
       - name: Seed is re-runnable
         run: npm run db:seed -w apps/api
+      - name: API tests (sign-in, roles, Office Admin)
+        run: npm test -w apps/api
+      - run: npm run typecheck -w apps/web
       - run: npm run build -w apps/web

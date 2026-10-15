@@ -57,6 +57,7 @@ export const staff = pgTable('staff', {
   mustChangePassword: boolean('must_change_password').notNull().default(true),
   preferredLang: lang('preferred_lang').notNull().default('EN'),
   telegramChatId: text('telegram_chat_id'),
+  lastLoginAt: timestamp('last_login_at', { withTimezone: true }),
   createdAt: createdAt(),
   updatedAt: updatedAt(),
 }, (t) => [index('staff_branch_role_status_idx').on(t.branchId, t.role, t.status)]);
@@ -315,6 +316,20 @@ export const exportsLog = pgTable('exports', {
   createdById: uuid('created_by_id').notNull().references(() => staff.id),
   createdAt: createdAt(),
 });
+
+// ───────────── Sessions ─────────────
+
+/** Server-side sessions. The cookie holds a random token; only its SHA-256 hash is stored. */
+export const sessions = pgTable('sessions', {
+  id: id(),
+  staffId: uuid('staff_id').notNull().references(() => staff.id, { onDelete: 'cascade' }),
+  tokenHash: text('token_hash').notNull().unique(),
+  createdAt: createdAt(),
+  lastSeenAt: timestamp('last_seen_at', { withTimezone: true }).notNull().defaultNow(),
+  expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
+  ip: text('ip'),
+  userAgent: text('user_agent'),
+}, (t) => [index('sessions_staff_idx').on(t.staffId)]);
 
 // ───────────── Audit ─────────────
 

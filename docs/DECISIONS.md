@@ -14,6 +14,8 @@
 | 10 | 13 Oct 2026 | **Branch-aware** data model | Every business table has `branch_id`. |
 | 11 | 13 Oct 2026 | **Drizzle ORM** instead of Prisma | Prisma needs native engine binaries downloaded at build time (failed in our build environment, and adds risk on ARM). Drizzle is pure TypeScript; migrations are plain SQL files in the repo. |
 | 12 | 13 Oct 2026 | Visit proof files on a **Docker volume** for the test server | Fewer moving parts. Switch to S3-compatible storage for production via env vars. |
+| 17 | 15 Oct 2026 | Temporary passwords are shown **once** to the Office Admin and never stored in plain text | Handed over in person or by direct message until the Telegram bot (Phase 2). Lost → reset. |
+| 16 | 15 Oct 2026 | **Server-side sessions** (random token in an httpOnly cookie, SHA-256 hash in the database) instead of JWTs | Sign-out, password reset and deactivation take effect immediately. Idle timeout 12 h, maximum 7 days. |
 | 15 | 14 Oct 2026 | Test hosting moved to **Render (app) + Neon (Postgres)** | Oracle sign-up wasn't possible. Both are free without a card. Free Render services sleep after 15 min idle; acceptable for the pilot. Docker Compose setup kept for a later own server. |
 | 14 | 14 Oct 2026 | Personal data (staff names) kept out of the repository | The repository may be public; names live only on the server. |
 | 13 | 13 Oct 2026 | **NestJS 11, Next.js 16, React 19, PostgreSQL 16** | Current patched releases; `npm audit` reports 0 vulnerabilities at Phase 0. |
