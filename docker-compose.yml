@@ -46,6 +46,7 @@ services:
     restart: unless-stopped
     environment:
       TZ: Africa/Addis_Ababa
+      API_URL: http://api:4000
     depends_on: [api]
 
   caddy:

@@ -34,10 +34,7 @@ services:
     dockerContext: .
     autoDeploy: true
     envVars:
-      - key: API_HOST
-        fromService:
-          type: web
-          name: dembel-api
-          property: host
+      - key: API_URL
+        value: https://dembel-api.onrender.com   # change if the API service gets a different address
       - key: TZ
         value: Africa/Addis_Ababa

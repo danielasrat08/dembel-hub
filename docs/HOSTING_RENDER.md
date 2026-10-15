@@ -32,6 +32,9 @@ On first start the API creates the tables and loads the branch, teams, staff IDs
 Open the `dembel-web` address Render shows (e.g. `https://dembel-web.onrender.com`) on a phone.
 The status card should show **Server** and **Database** online, **5 teams**, **45 active staff**.
 
+## If the API address is different
+The web app forwards `/api` to `API_URL` (default `https://dembel-api.onrender.com`). If Render gave the API another address, set `API_URL` on **dembel-web → Environment** to it. No rebuild needed.
+
 ## Afterwards
 - Every push to `main` on GitHub redeploys automatically.
 - Logs: Render dashboard → service → **Logs**.
