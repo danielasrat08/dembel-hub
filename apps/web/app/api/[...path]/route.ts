@@ -27,19 +27,28 @@ async function forward(req: NextRequest) {
   if (ip) headers.set('x-forwarded-for', ip);
   headers.set('x-forwarded-proto', req.nextUrl.protocol.replace(':', ''));
 
-  const hasBody = !['GET', 'HEAD'].includes(req.method);
-  let upstream: Response;
-  try {
-    upstream = await fetch(target, {
-      method: req.method,
-      headers,
-      body: hasBody ? await req.text() : undefined,
-      redirect: 'manual',
-      cache: 'no-store',
-      signal: AbortSignal.timeout(90_000), // free hosting can take ~1 min to wake
-    });
-  } catch {
-    return Response.json({ message: 'The server is starting up or not reachable. Try again in a minute.' }, { status: 502 });
+  const body = ['GET', 'HEAD'].includes(req.method) ? undefined : await req.text();
+  // Render's free plan answers 502/503/504 while the API wakes or restarts. Keep retrying for up to ~75 s.
+  const deadline = Date.now() + 75_000;
+  let upstream: Response | null = null;
+  for (let attempt = 0; ; attempt++) {
+    try {
+      upstream = await fetch(target, {
+        method: req.method, headers, body, redirect: 'manual', cache: 'no-store',
+        signal: AbortSignal.timeout(Math.max(5_000, deadline - Date.now())),
+      });
+      if (![502, 503, 504].includes(upstream.status)) break;
+    } catch {
+      upstream = null;
+    }
+    if (Date.now() + 3_000 > deadline) break;
+    await new Promise((r) => setTimeout(r, Math.min(2_000 + attempt * 1_000, 5_000)));
+  }
+  if (!upstream || [502, 503, 504].includes(upstream.status)) {
+    return Response.json(
+      { message: 'The server is starting up and did not answer in time. Wait a minute and try again.', code: 'API_UNAVAILABLE' },
+      { status: 503 },
+    );
   }
 
   const out = new Headers();

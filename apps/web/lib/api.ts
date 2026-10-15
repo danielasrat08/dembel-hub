@@ -19,6 +19,9 @@ export async function api<T = unknown>(path: string, opts: { method?: string; bo
     throw new ApiError(0, 'offline');
   }
   const data = await res.json().catch(() => ({}));
+  if (!res.ok && !data?.message && [502, 503, 504].includes(res.status)) {
+    throw new ApiError(res.status, 'The server is starting up. Wait a minute and try again.');
+  }
   if (!res.ok) {
     const msg = Array.isArray(data?.message) ? data.message.join(' ') : data?.message ?? `Request failed (${res.status})`;
     throw new ApiError(res.status, msg, data?.code);
